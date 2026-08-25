@@ -1,4 +1,4 @@
-# Megha Sainath — Portfolio
+﻿# Megha Parasuraman Sainath — Portfolio
 
 A three-page static portfolio site (Home · Experience · Interests), built as plain
 HTML/CSS with no build step. Designed to be hosted for free on **GitHub Pages**.
