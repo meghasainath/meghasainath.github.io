@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Megha Sainath</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=Space+Mono&display=swap');
+
+:root{
+  --paper: #F6F3ED;
+  --paper-warm: #EFE9DD;
+  --ink: #1D1A16;
+  --ink-soft: #55503F;
+  --teal: #2E5C50;
+  --mustard: #C08829;
+  --rule: #D9D2C2;
+}
+
+*{box-sizing:border-box; margin:0; padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'Inter', sans-serif;
+  line-height:1.6;
+  overflow-x:hidden;
+}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  *{animation-duration:0.01ms !important; transition-duration:0.01ms !important;}
+}
+a{color:var(--teal);}
+a:focus-visible, button:focus-visible{outline:2px solid var(--teal); outline-offset:3px;}
+.wrap{max-width:1040px; margin:0 auto; padding:0 32px;}
+
+/* ---------- Nav ---------- */
+.site-nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:26px 32px;
+  border-bottom:1px solid var(--rule);
+  background:var(--paper);
+  position:sticky;
+  top:0;
+  z-index:50;
+}
+.site-nav .brand{
+  font-family:'Fraunces', serif;
+  font-weight:600;
+  font-size:18px;
+  color:var(--ink);
+  text-decoration:none;
+  letter-spacing:-0.01em;
+}
+.site-nav .links{
+  display:flex;
+  gap:32px;
+  font-family:'Space Mono', monospace;
+  font-size:12px;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+}
+.site-nav .links a{
+  color:var(--ink-soft);
+  text-decoration:none;
+  padding-bottom:4px;
+  border-bottom:1px solid transparent;
+  transition:color .2s ease, border-color .2s ease;
+}
+.site-nav .links a:hover{color:var(--teal);}
+.site-nav .links a.active{color:var(--teal); border-color:var(--mustard);}
+@media (max-width:560px){
+  .site-nav{flex-wrap:wrap; gap:10px 20px; padding:18px 24px;}
+  .site-nav .brand{font-size:16px;}
+  .site-nav .links{gap:18px; font-size:11px;}
+}
+
+/* ---------- Section shells ---------- */
+section{padding:100px 0;}
+.page-head{padding:80px 0 0;}
+.page-head h1{
+  font-family:'Fraunces', serif;
+  font-weight:600;
+  font-size:clamp(40px,7vw,72px);
+  line-height:1;
+}
+.page-head .rule{
+  width:64px; height:2px;
+  background:var(--mustard);
+  margin-top:22px;
+}
+.section-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  margin-bottom:56px;
+  gap:24px;
+  flex-wrap:wrap;
+}
+.section-label{
+  font-family:'Space Mono', monospace;
+  font-size:13px;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:var(--mustard);
+}
+.section-head h2{
+  font-family:'Fraunces', serif;
+  font-weight:600;
+  font-size:clamp(30px,4vw,44px);
+}
+
+/* ---------- Home ---------- */
+.home-hero{
+  padding:70px 0 40px;
+}
+.home-mark{
+  font-family:'Fraunces', serif;
+  font-weight:700;
+  font-size:clamp(40px,8vw,88px);
+  letter-spacing:-0.01em;
+  line-height:1;
+  margin-bottom:56px;
+}
+.home-intro-grid{
+  display:grid;
+  grid-template-columns:300px 1fr;
+  gap:56px;
+  align-items:start;
+  padding-bottom:70px;
+  border-bottom:1px solid var(--rule);
+}
+.home-photo img{
+  width:100%;
+  aspect-ratio:4/5;
+  object-fit:cover;
+  border-radius:2px;
+  filter:grayscale(6%);
+}
+.home-intro h1{
+  font-family:'Fraunces', serif;
+  font-weight:600;
+  font-size:clamp(32px,4.5vw,46px);
+  margin-bottom:24px;
+}
+.home-intro h1 .wave{display:inline-block;}
+.home-intro p{
+  font-size:17px;
+  color:var(--ink-soft);
+  margin-bottom:16px;
+  max-width:560px;
+}
+.home-intro p a{
+  font-style:italic;
+  border-bottom:1px solid var(--mustard);
+  text-decoration:none;
+}
+@media (max-width:760px){
+  .home-intro-grid{grid-template-columns:1fr;}
+  .home-photo{max-width:260px;}
+}
+
+.contact-row{
+  display:flex;
+  gap:16px;
+  padding:56px 0 0;
+}
+.contact-icon{
+  width:46px; height:46px;
+  border-radius:50%;
+  background:var(--ink);
+  color:var(--paper);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  font-size:16px;
+  font-family:'Space Mono', monospace;
+  transition:background .2s ease, transform .2s ease;
+}
+.contact-icon:hover{background:var(--teal); transform:translateY(-2px);}
+
+/* ---------- Logo / badge strips ---------- */
+.badge-section{
+  padding:56px 0;
+  border-bottom:1px solid var(--rule);
+}
+.badge-strip{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:20px;
+}
+.badge{
+  font-family:'Space Mono', monospace;
+  font-size:13px;
+  color:var(--ink);
+  background:var(--paper-warm);
+  border:1px solid var(--rule);
+  padding:10px 18px;
+  border-radius:2px;
+  letter-spacing:0.02em;
+}
+/* logo cards */
+.logo-strip{
+  display:flex;
+  flex-wrap:wrap;
+  gap:16px;
+  margin-top:24px;
+}
+.logo-card{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:14px;
+  background:#FFFFFF;
+  border:1px solid var(--rule);
+  border-radius:6px;
+  padding:22px 26px;
+  min-width:158px;
+  flex:0 1 auto;
+  text-decoration:none;
+  transition:border-color .25s ease, transform .25s ease, box-shadow .25s ease;
+}
+.logo-card:hover{
+  border-color:var(--mustard);
+  transform:translateY(-3px);
+  box-shadow:0 8px 22px rgba(29,26,22,0.08);
+}
+.logo-card img{
+  height:40px;
+  max-width:130px;
+  width:auto;
+  object-fit:contain;
+  filter:grayscale(1);
+  opacity:.7;
+  transition:filter .25s ease, opacity .25s ease;
+}
+.logo-card:hover img{filter:none; opacity:1;}
+.logo-card .logo-name{
+  font-family:'Space Mono', monospace;
+  font-size:11px;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  color:var(--ink-soft);
+  text-align:center;
+}
+@media (max-width:640px){
+  .logo-strip{gap:12px;}
+  .logo-card{min-width:0; flex:1 1 138px; padding:18px;}
+}
+
+/* ---------- About / trait list (shared) ---------- */
+.about-grid{
+  display:grid;
+  grid-template-columns:1.1fr 1fr;
+  gap:64px;
+  align-items:start;
+}
+.about-grid p{
+  font-size:18px;
+  color:var(--ink-soft);
+  margin-bottom:20px;
+  max-width:520px;
+}
+.about-grid p:first-child{
+  font-family:'Fraunces', serif;
+  font-size:26px;
+  font-weight:500;
+  color:var(--ink);
+  line-height:1.4;
+}
+.trait-list{
+  display:flex;
+  flex-direction:column;
+  gap:0;
+  border-top:1px solid var(--rule);
+}
+.trait{
+  padding:20px 0;
+  border-bottom:1px solid var(--rule);
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+}
+.trait-k{
+  font-family:'Space Mono', monospace;
+  font-size:12px;
+  color:var(--ink-soft);
+  text-transform:uppercase;
+  letter-spacing:0.08em;
+  min-width:110px;
+}
+.trait-v{font-size:15px; color:var(--ink);}
+
+/* ---------- Resume callout ---------- */
+.resume-callout{
+  text-align:center;
+  padding:70px 0 40px;
+}
+.resume-link{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  font-family:'Fraunces', serif;
+  font-weight:600;
+  font-size:28px;
+  color:var(--ink);
+  text-decoration:none;
+  border-bottom:2px solid var(--mustard);
+  padding-bottom:6px;
+}
+.resume-link:hover{color:var(--teal);}
+
+/* ---------- Experience timeline ---------- */
+.experience{border-bottom:1px solid var(--rule);}
+.exp-list{border-top:1px solid var(--rule);}
+.exp-item{
+  display:grid;
+  grid-template-columns:160px 1fr;
+  gap:32px;
+  padding:32px 0;
+  border-bottom:1px solid var(--rule);
+}
+.exp-dates{
+  font-family:'Space Mono', monospace;
+  font-size:13px;
+  color:var(--ink-soft);
+  padding-top:4px;
+}
+.exp-main h3{
+  font-family:'Fraunces', serif;
+  font-weight:600;
+  font-size:22px;
+  margin-bottom:6px;
+}
+.exp-co{
+  font-family:'Inter', sans-serif;
+  font-size:14px;
+  color:var(--teal);
+  font-weight:600;
+  margin-bottom:12px;
+}
+.exp-main p{
+  font-size:15px;
+  color:var(--ink-soft);
+  max-width:640px;
+}
+@media (max-width:760px){
+  .exp-item{grid-template-columns:1fr; gap:8px;}
+}
+
+/* ---------- Stories (simple card version) ---------- */
+.story-simple{
+  padding:56px 0;
+  border-bottom:1px solid var(--rule);
+}
+.story-simple .story-mark{
+  font-family:'Space Mono', monospace;
+  font-size:12px;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:var(--mustard);
+  margin-bottom:14px;
+  display:block;
+}
+.story-simple h3{
+  font-family:'Fraunces', serif;
+  font-weight:600;
+  font-size:clamp(26px,3.5vw,34px);
+  margin-bottom:20px;
+  max-width:700px;
+}
+.story-simple p{
+  font-size:16px;
+  color:var(--ink-soft);
+  max-width:700px;
+  margin-bottom:24px;
+}
+.story-simple p a{
+  color:var(--teal);
+  text-decoration:underline;
+  text-decoration-color:var(--rule);
+  text-underline-offset:3px;
+}
+
+/* ---------- Asset links ---------- */
+.asset-links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+}
+.asset-link{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  font-family:'Space Mono', monospace;
+  font-size:13px;
+  color:var(--ink);
+  text-decoration:none;
+  background:var(--paper-warm);
+  border:1px solid var(--rule);
+  padding:12px 18px;
+  border-radius:2px;
+  transition:border-color .2s ease, color .2s ease, transform .2s ease;
+  cursor:pointer;
+}
+.asset-link:hover{
+  border-color:var(--teal);
+  color:var(--teal);
+  transform:translateY(-2px);
+}
+.asset-link .arrow{color:var(--mustard); font-size:14px;}
+
+/* ---------- Interests: books ---------- */
+.book-list{
+  border-top:1px solid var(--rule);
+  max-width:700px;
+}
+.book-item{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:20px;
+  padding:20px 0;
+  border-bottom:1px solid var(--rule);
+}
+.book-title{
+  font-family:'Fraunces', serif;
+  font-size:19px;
+  font-weight:500;
+  color:var(--ink);
+}
+.book-author{
+  font-family:'Space Mono', monospace;
+  font-size:12px;
+  color:var(--ink-soft);
+  text-transform:uppercase;
+  white-space:nowrap;
+  letter-spacing:0.04em;
+}
+
+/* ---------- Interests: photo grid ---------- */
+.photo-grid{
+  columns:3 260px;
+  column-gap:20px;
+}
+.photo-grid img{
+  width:100%;
+  display:block;
+  margin-bottom:20px;
+  border-radius:2px;
+  break-inside:avoid;
+  filter:grayscale(4%);
+}
+@media (max-width:760px){
+  .photo-grid{columns:2 180px;}
+}
+
+/* ---------- Closing ---------- */
+.closing{
+  background:var(--ink);
+  color:var(--paper);
+  text-align:left;
+}
+.closing h2{
+  font-family:'Fraunces', serif;
+  font-weight:600;
+  font-size:clamp(36px,6vw,64px);
+  max-width:700px;
+  line-height:1.05;
+}
+.closing p{
+  margin-top:20px;
+  color:#C9C3B4;
+  font-size:17px;
+  max-width:480px;
+}
+.closing-link{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  margin-top:40px;
+  font-family:'Space Mono', monospace;
+  font-size:14px;
+  color:var(--paper);
+  text-decoration:none;
+  border-bottom:1px solid var(--mustard);
+  padding-bottom:6px;
+}
+.closing-link:hover{color:var(--mustard);}
+footer.site-footer{
+  font-family:'Space Mono', monospace;
+  font-size:11px;
+  color:#8B8570;
+  padding:40px 32px;
+  border-top:1px solid var(--rule);
+  text-align:center;
+}
+
+
+/* ---------- Horizontal gutters (fix: layout classes on .wrap elements
+   were zeroing side padding via 'padding: N 0' shorthand) ---------- */
+.wrap{padding-left:32px; padding-right:32px;}
+@media (max-width:640px){
+  .wrap{padding-left:22px; padding-right:22px;}
+  section{padding:64px 0;}
+}
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a class="brand" href="index.html">Megha Sainath</a>
+  <div class="links">
+    <a href="index.html" class="active">Home</a>
+    <a href="experience.html">Experience</a>
+    <a href="interests.html">Interests</a>
+  </div>
+</nav>
+
+<div class="wrap home-hero">
+  <div class="home-mark">MEGHA SAINATH</div>
+
+  <div class="home-intro-grid">
+    <div class="home-photo">
+      <img src="assets/portrait.jpg" alt="Megha Sainath">
+    </div>
+    <div class="home-intro">
+      <h1>Hi, I'm Megha! <span class="wave">👋</span></h1>
+      <p>I'm passionate about marketing, storytelling, emerging technologies, and mental health. Explore my <a href="experience.html">Experience</a> to see how these interests shape my work.</p>
+      <p>I've always been a seeker at heart: the kind of person who teaches themself new skills just to see how the gears turn, bringing a relentless will to learn and a genuine hunger for new challenges to every team I join.</p>
+      <p>I'm also a solo traveller, avid reader, photography enthusiast, and runner. Browse through my <a href="interests.html">Interests</a> to learn more.</p>
+      <p>I'm always keen to exchange ideas! Feel free to reach out to me via email or LinkedIn below.</p>
+    </div>
+  </div>
+</div>
+
+<div class="wrap badge-section">
+  <div class="section-label">Education</div>
+  <div class="logo-strip">
+    <a class="logo-card" href="https://www.mcc.edu.in/" target="_blank" rel="noopener">
+      <img src="assets/logos/mcc.png" alt="Madras Christian College logo">
+      <span class="logo-name">Madras Christian College</span>
+    </a>
+    <a class="logo-card" href="https://www.cam.ac.uk/" target="_blank" rel="noopener">
+      <img src="assets/logos/cambridge.svg" alt="University of Cambridge coat of arms">
+      <span class="logo-name">University of Cambridge</span>
+    </a>
+  </div>
+</div>
+
+<div class="wrap badge-section" style="border-bottom:none;">
+  <div class="section-label">Work Experience</div>
+  <div class="logo-strip">
+    <a class="logo-card" href="https://www.itcportal.com/" target="_blank" rel="noopener">
+      <img src="assets/logos/itc.svg" alt="ITC Ltd. logo">
+      <span class="logo-name">ITC Ltd.</span>
+    </a>
+    <a class="logo-card" href="https://hexaware.com/" target="_blank" rel="noopener">
+      <img src="assets/logos/hexaware.svg" alt="Hexaware Technologies logo">
+      <span class="logo-name">Hexaware Technologies</span>
+    </a>
+    <a class="logo-card" href="https://www.paperflite.com/" target="_blank" rel="noopener">
+      <img src="assets/logos/paperflite.png" alt="Paperflite logo">
+      <span class="logo-name">Paperflite</span>
+    </a>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="contact-row">
+    <a class="contact-icon" href="mailto:meghasainath30@gmail.com" title="Email">&#9993;</a>
+    <a class="contact-icon" href="https://www.linkedin.com/in/megha-sainath" target="_blank" rel="noopener" title="LinkedIn">in</a>
+  </div>
+</div>
+
+<footer class="site-footer">Megha Sainath — Portfolio, 2026</footer>
+
+</body>
+</html>
