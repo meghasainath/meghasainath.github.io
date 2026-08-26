@@ -164,8 +164,9 @@ section{padding:100px 0;}
 
 .contact-row{
   display:flex;
+  justify-content:center;
   gap:16px;
-  padding:56px 0 0;
+  padding:24px 0 0;
 }
 .contact-icon{
   width:46px; height:46px;
@@ -186,10 +187,15 @@ section{padding:100px 0;}
 .badge-section{
   padding:56px 0;
   border-bottom:1px solid var(--rule);
+  text-align:center;
+}
+.badge-section .section-label{
+  display:inline-block;
 }
 .badge-strip{
   display:flex;
   flex-wrap:wrap;
+  justify-content:center;
   gap:12px;
   margin-top:20px;
 }
@@ -207,6 +213,7 @@ section{padding:100px 0;}
 .logo-strip{
   display:flex;
   flex-wrap:wrap;
+  justify-content:center;
   gap:16px;
   margin-top:24px;
 }
@@ -534,11 +541,10 @@ footer.site-footer{
       <p>I'm passionate about marketing, storytelling, emerging technologies, and mental health. Explore my <a href="experience.html">Experience</a> to see how these interests shape my work.</p>
       <p>I've always been a seeker at heart: the kind of person who teaches themself new skills just to see how the gears turn, bringing a relentless will to learn and a genuine hunger for new challenges to every team I join.</p>
       <p>I'm also a solo traveller, avid reader, photography enthusiast, and runner. Browse through my <a href="interests.html">Interests</a> to learn more.</p>
-      <p>I'm always keen to exchange ideas! Feel free to reach out to me via email or LinkedIn.</p>
+      <p>I'm always keen to exchange ideas! Feel free to reach out to me via <a href="mailto:meghasainath30@gmail.com">email</a> or <a href="https://www.linkedin.com/in/megha-sainath" target="_blank" rel="noopener">LinkedIn</a>.</p>
     </div>
   </div>
 </div>
-
 <div class="wrap badge-section">
   <div class="section-label">Education</div>
   <div class="logo-strip">
@@ -553,7 +559,7 @@ footer.site-footer{
   </div>
 </div>
 
-<div class="wrap badge-section" style="border-bottom:none;">
+<div class="wrap badge-section">
   <div class="section-label">Work Experience</div>
   <div class="logo-strip">
     <a class="logo-card" href="https://www.itcportal.com/" target="_blank" rel="noopener">
@@ -571,7 +577,8 @@ footer.site-footer{
   </div>
 </div>
 
-<div class="wrap">
+<div class="wrap badge-section" style="border-bottom:none;">
+  <div class="section-label">Contact</div>
   <div class="contact-row">
     <a class="contact-icon" href="mailto:meghasainath30@gmail.com" title="Email">&#9993;</a>
     <a class="contact-icon" href="https://www.linkedin.com/in/megha-sainath" target="_blank" rel="noopener" title="LinkedIn">in</a>
