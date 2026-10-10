@@ -460,6 +460,36 @@ footer.site-footer{
   .wrap{padding-left:22px; padding-right:22px;}
   section{padding:64px 0;}
 }
+
+/* ---------- Mobile refinements (phones only: <=640px) ----------
+   Everything here sits inside one media query, so screens wider than
+   640px render exactly as before. */
+@media (max-width:640px){
+  /* larger tap targets in the nav, without making the bar taller */
+  .site-nav{padding:4px 22px;}
+  .site-nav .links a{padding:13px 2px;}
+
+  /* tighter vertical rhythm so pages are less of a long scroll */
+  .page-head{padding-top:48px;}
+  .home-hero{padding-top:40px; padding-bottom:24px;}
+  .home-mark{margin-bottom:32px;}
+  .home-intro-grid{gap:28px; padding-bottom:44px;}
+  .resume-callout{padding-top:40px; padding-bottom:8px;}
+  .section-head{margin-bottom:24px;}
+  .story-simple{padding-top:40px; padding-bottom:40px;}
+  .badge-section{padding-top:40px; padding-bottom:40px;}
+
+  /* comfortable thumb-sized buttons */
+  .asset-link{min-height:44px;}
+
+  /* photography: two columns on phones instead of one very long column */
+  .photo-grid{columns:2 120px; column-gap:12px;}
+  .photo-grid img{margin-bottom:12px;}
+
+  /* book list: let long author names wrap instead of squeezing the title */
+  .book-item{flex-wrap:wrap; gap:4px 16px;}
+  .book-author{white-space:normal;}
+}
 </style>
 </head>
 <body>
