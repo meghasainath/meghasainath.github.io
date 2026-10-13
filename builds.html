@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Builds — Megha Sainath</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=Space+Mono&display=swap');
+
+:root{
+  --paper: #F6F3ED;
+  --paper-warm: #EFE9DD;
+  --ink: #1D1A16;
+  --ink-soft: #55503F;
+  --teal: #2E5C50;
+  --mustard: #C08829;
+  --rule: #D9D2C2;
+}
+
+*{box-sizing:border-box; margin:0; padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'Inter', sans-serif;
+  line-height:1.6;
+  overflow-x:hidden;
+}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  *{animation-duration:0.01ms !important; transition-duration:0.01ms !important;}
+}
+a{color:var(--teal);}
+a:focus-visible, button:focus-visible{outline:2px solid var(--teal); outline-offset:3px;}
+.wrap{max-width:1040px; margin:0 auto; padding:0 32px;}
+
+/* ---------- Nav ---------- */
+.site-nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:26px 32px;
+  border-bottom:1px solid var(--rule);
+  background:var(--paper);
+  position:sticky;
+  top:0;
+  z-index:50;
+}
+.site-nav .brand{
+  font-family:'Fraunces', serif;
+  font-weight:600;
+  font-size:18px;
+  color:var(--ink);
+  text-decoration:none;
+  letter-spacing:-0.01em;
+}
+.site-nav .links{
+  display:flex;
+  gap:32px;
+  font-family:'Space Mono', monospace;
+  font-size:12px;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+}
+.site-nav .links a{
+  color:var(--ink-soft);
+  text-decoration:none;
+  padding-bottom:4px;
+  border-bottom:1px solid transparent;
+  transition:color .2s ease, border-color .2s ease;
+}
+.site-nav .links a:hover{color:var(--teal);}
+.site-nav .links a.active{color:var(--teal); border-color:var(--mustard);}
+@media (max-width:560px){
+  .site-nav{flex-wrap:wrap; gap:10px 20px; padding:18px 24px;}
+  .site-nav .brand{font-size:16px;}
+  .site-nav .links{gap:18px; font-size:11px;}
+}
+
+/* ---------- Section shells ---------- */
+section{padding:100px 0;}
+.page-head{padding:80px 0 0;}
+.page-head h1{
+  font-family:'Fraunces', serif;
+  font-weight:600;
+  font-size:clamp(40px,7vw,72px);
+  line-height:1;
+}
+.page-head .rule{
+  width:64px; height:2px;
+  background:var(--mustard);
+  margin-top:22px;
+}
+.section-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  margin-bottom:56px;
+  gap:24px;
+  flex-wrap:wrap;
+}
+.section-label{
+  font-family:'Space Mono', monospace;
+  font-size:13px;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:var(--mustard);
+}
+.section-head h2{
+  font-family:'Fraunces', serif;
+  font-weight:600;
+  font-size:clamp(30px,4vw,44px);
+}
+
+/* ---------- Home ---------- */
+.home-hero{
+  padding:70px 0 40px;
+}
+.home-mark{
+  font-family:'Fraunces', serif;
+  font-weight:700;
+  font-size:clamp(40px,8vw,88px);
+  letter-spacing:-0.01em;
+  line-height:1;
+  margin-bottom:56px;
+}
+.home-intro-grid{
+  display:grid;
+  grid-template-columns:300px 1fr;
+  gap:56px;
+  align-items:start;
+  padding-bottom:70px;
+  border-bottom:1px solid var(--rule);
+}
+.home-photo img{
+  width:100%;
+  aspect-ratio:4/5;
+  object-fit:cover;
+  border-radius:2px;
+  filter:grayscale(6%);
+}
+.home-intro h1{
+  font-family:'Fraunces', serif;
+  font-weight:600;
+  font-size:clamp(32px,4.5vw,46px);
+  margin-bottom:24px;
+}
+.home-intro h1 .wave{display:inline-block;}
+.home-intro p{
+  font-size:17px;
+  color:var(--ink-soft);
+  margin-bottom:16px;
+  max-width:560px;
+}
+.home-intro p a{
+  font-style:italic;
+  border-bottom:1px solid var(--mustard);
+  text-decoration:none;
+}
+@media (max-width:760px){
+  .home-intro-grid{grid-template-columns:1fr;}
+  .home-photo{max-width:260px;}
+}
+
+.contact-row{
+  display:flex;
+  gap:16px;
+  padding:56px 0 0;
+}
+.contact-icon{
+  width:46px; height:46px;
+  border-radius:50%;
+  background:var(--ink);
+  color:var(--paper);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  font-size:16px;
+  font-family:'Space Mono', monospace;
+  transition:background .2s ease, transform .2s ease;
+}
+.contact-icon:hover{background:var(--teal); transform:translateY(-2px);}
+
+/* ---------- Logo / badge strips ---------- */
+.badge-section{
+  padding:56px 0;
+  border-bottom:1px solid var(--rule);
+}
+.badge-strip{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:20px;
+}
+.badge{
+  font-family:'Space Mono', monospace;
+  font-size:13px;
+  color:var(--ink);
+  background:var(--paper-warm);
+  border:1px solid var(--rule);
+  padding:10px 18px;
+  border-radius:2px;
+  letter-spacing:0.02em;
+}
+
+/* ---------- About / trait list (shared) ---------- */
+.about-grid{
+  display:grid;
+  grid-template-columns:1.1fr 1fr;
+  gap:64px;
+  align-items:start;
+}
+.about-grid p{
+  font-size:18px;
+  color:var(--ink-soft);
+  margin-bottom:20px;
+  max-width:520px;
+}
+.about-grid p:first-child{
+  font-family:'Fraunces', serif;
+  font-size:26px;
+  font-weight:500;
+  color:var(--ink);
+  line-height:1.4;
+}
+.trait-list{
+  display:flex;
+  flex-direction:column;
+  gap:0;
+  border-top:1px solid var(--rule);
+}
+.trait{
+  padding:20px 0;
+  border-bottom:1px solid var(--rule);
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+}
+.trait-k{
+  font-family:'Space Mono', monospace;
+  font-size:12px;
+  color:var(--ink-soft);
+  text-transform:uppercase;
+  letter-spacing:0.08em;
+  min-width:110px;
+}
+.trait-v{font-size:15px; color:var(--ink);}
+
+/* ---------- Resume callout ---------- */
+.resume-callout{
+  text-align:center;
+  padding:70px 0 40px;
+}
+.resume-link{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  font-family:'Fraunces', serif;
+  font-weight:600;
+  font-size:28px;
+  color:var(--ink);
+  text-decoration:none;
+  border-bottom:2px solid var(--mustard);
+  padding-bottom:6px;
+}
+.resume-link:hover{color:var(--teal);}
+
+/* ---------- Experience timeline ---------- */
+.experience{border-bottom:1px solid var(--rule);}
+.exp-list{border-top:1px solid var(--rule);}
+.exp-item{
+  display:grid;
+  grid-template-columns:160px 1fr;
+  gap:32px;
+  padding:32px 0;
+  border-bottom:1px solid var(--rule);
+}
+.exp-dates{
+  font-family:'Space Mono', monospace;
+  font-size:13px;
+  color:var(--ink-soft);
+  padding-top:4px;
+}
+.exp-main h3{
+  font-family:'Fraunces', serif;
+  font-weight:600;
+  font-size:22px;
+  margin-bottom:6px;
+}
+.exp-co{
+  font-family:'Inter', sans-serif;
+  font-size:14px;
+  color:var(--teal);
+  font-weight:600;
+  margin-bottom:12px;
+}
+.exp-main p{
+  font-size:15px;
+  color:var(--ink-soft);
+  max-width:640px;
+}
+@media (max-width:760px){
+  .exp-item{grid-template-columns:1fr; gap:8px;}
+}
+
+/* ---------- Stories (simple card version) ---------- */
+.story-simple{
+  padding:56px 0;
+  border-bottom:1px solid var(--rule);
+}
+.story-simple .story-mark{
+  font-family:'Space Mono', monospace;
+  font-size:12px;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:var(--mustard);
+  margin-bottom:14px;
+  display:block;
+}
+.story-simple h3{
+  font-family:'Fraunces', serif;
+  font-weight:600;
+  font-size:clamp(26px,3.5vw,34px);
+  margin-bottom:20px;
+  max-width:700px;
+}
+.story-simple p{
+  font-size:16px;
+  color:var(--ink-soft);
+  max-width:700px;
+  margin-bottom:24px;
+}
+.story-simple p a{
+  color:var(--teal);
+  text-decoration:underline;
+  text-decoration-color:var(--rule);
+  text-underline-offset:3px;
+}
+
+/* ---------- Asset links ---------- */
+.asset-links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+}
+.asset-link{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  font-family:'Space Mono', monospace;
+  font-size:13px;
+  color:var(--ink);
+  text-decoration:none;
+  background:var(--paper-warm);
+  border:1px solid var(--rule);
+  padding:12px 18px;
+  border-radius:2px;
+  transition:border-color .2s ease, color .2s ease, transform .2s ease;
+  cursor:pointer;
+}
+.asset-link:hover{
+  border-color:var(--teal);
+  color:var(--teal);
+  transform:translateY(-2px);
+}
+.asset-link .arrow{color:var(--mustard); font-size:14px;}
+
+/* ---------- Interests: books ---------- */
+.book-list{
+  border-top:1px solid var(--rule);
+  max-width:700px;
+}
+.book-item{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:20px;
+  padding:20px 0;
+  border-bottom:1px solid var(--rule);
+}
+.book-title{
+  font-family:'Fraunces', serif;
+  font-size:19px;
+  font-weight:500;
+  color:var(--ink);
+}
+.book-author{
+  font-family:'Space Mono', monospace;
+  font-size:12px;
+  color:var(--ink-soft);
+  text-transform:uppercase;
+  white-space:nowrap;
+  letter-spacing:0.04em;
+}
+
+/* ---------- Interests: photo grid ---------- */
+.photo-grid{
+  columns:3 260px;
+  column-gap:20px;
+}
+.photo-grid img{
+  width:100%;
+  display:block;
+  margin-bottom:20px;
+  border-radius:2px;
+  break-inside:avoid;
+  filter:grayscale(4%);
+}
+@media (max-width:760px){
+  .photo-grid{columns:2 180px;}
+}
+
+/* ---------- Closing ---------- */
+.closing{
+  background:var(--ink);
+  color:var(--paper);
+  text-align:left;
+}
+.closing h2{
+  font-family:'Fraunces', serif;
+  font-weight:600;
+  font-size:clamp(36px,6vw,64px);
+  max-width:700px;
+  line-height:1.05;
+}
+.closing p{
+  margin-top:20px;
+  color:#C9C3B4;
+  font-size:17px;
+  max-width:480px;
+}
+.closing-link{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  margin-top:40px;
+  font-family:'Space Mono', monospace;
+  font-size:14px;
+  color:var(--paper);
+  text-decoration:none;
+  border-bottom:1px solid var(--mustard);
+  padding-bottom:6px;
+}
+.closing-link:hover{color:var(--mustard);}
+footer.site-footer{
+  font-family:'Space Mono', monospace;
+  font-size:11px;
+  color:#8B8570;
+  padding:40px 32px;
+  border-top:1px solid var(--rule);
+  text-align:center;
+}
+
+
+/* ---------- Horizontal gutters (fix: layout classes on .wrap elements
+   were zeroing side padding via 'padding: N 0' shorthand) ---------- */
+.wrap{padding-left:32px; padding-right:32px;}
+@media (max-width:640px){
+  .wrap{padding-left:22px; padding-right:22px;}
+  section{padding:64px 0;}
+}
+
+/* ---------- Mobile refinements (phones only: <=640px) ----------
+   Everything here sits inside one media query, so screens wider than
+   640px render exactly as before. */
+@media (max-width:640px){
+  /* larger tap targets in the nav, without making the bar taller */
+  .site-nav{padding:4px 22px;}
+  .site-nav .links a{padding:13px 2px;}
+
+  /* tighter vertical rhythm so pages are less of a long scroll */
+  .page-head{padding-top:48px;}
+  .home-hero{padding-top:40px; padding-bottom:24px;}
+  .home-mark{margin-bottom:32px;}
+  .home-intro-grid{gap:28px; padding-bottom:44px;}
+  .resume-callout{padding-top:40px; padding-bottom:8px;}
+  .section-head{margin-bottom:24px;}
+  .story-simple{padding-top:40px; padding-bottom:40px;}
+  .badge-section{padding-top:40px; padding-bottom:40px;}
+
+  /* comfortable thumb-sized buttons */
+  .asset-link{min-height:44px;}
+
+  /* photography: two columns on phones instead of one very long column */
+  .photo-grid{columns:2 120px; column-gap:12px;}
+  .photo-grid img{margin-bottom:12px;}
+
+  /* book list: let long author names wrap instead of squeezing the title */
+  .book-item{flex-wrap:wrap; gap:4px 16px;}
+  .book-author{white-space:normal;}
+}
+
+/* ---------- Builds page ---------- */
+.builds-intro{
+  font-size:18px;
+  color:var(--ink-soft);
+  max-width:620px;
+  margin-top:28px;
+}
+.beats .beat{margin-bottom:22px; max-width:700px;}
+.beat-label{
+  display:block;
+  font-family:'Space Mono', monospace;
+  font-size:12px;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:var(--mustard);
+  margin-bottom:4px;
+}
+.beats .beat p{margin-bottom:0;}
+.how-list{
+  max-width:700px;
+  margin:0 0 28px 0;
+  padding-left:20px;
+  color:var(--ink-soft);
+  font-size:16px;
+}
+.how-list li{margin-bottom:10px;}
+.how-list strong{color:var(--ink); font-weight:600;}
+.stack-label{
+  font-family:'Space Mono', monospace;
+  font-size:12px;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:var(--mustard);
+  margin-bottom:4px;
+}
+.build-stack{display:flex; flex-wrap:wrap; gap:10px; margin:10px 0 32px;}
+.build-stack .badge{padding:8px 14px; font-size:12px;}
+.build-figure{margin:0 0 28px; max-width:760px;}
+.build-figure img{width:100%; height:auto; display:block; border:1px solid var(--rule); border-radius:2px;}
+.build-figure figcaption{font-size:13px; color:var(--ink-soft); margin-top:8px;}
+.build-note{font-size:14px !important; margin-top:18px; margin-bottom:0 !important;}
+/* PREVIEW ONLY: highlights text still waiting on Megha. Remove before merging. */
+.todo{background:#FFE9A8; color:#1D1A16; padding:0 4px; border-radius:2px;}
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a class="brand" href="index.html">Megha Sainath</a>
+  <div class="links">
+    <a href="index.html">Home</a>
+    <a href="experience.html">Experience</a>
+    <a href="interests.html">Interests</a>
+    <a href="builds.html" class="active">Builds</a>
+  </div>
+</nav>
+
+<div class="wrap page-head">
+  <h1>Builds</h1>
+  <div class="rule"></div>
+  <p class="builds-intro">Small AI products I build to learn how product decisions play out. Each one is written up as a product story: who it is for, how it works, and what I did.</p>
+</div>
+
+<section style="padding-top:56px;">
+  <div class="wrap story-simple" id="hollow-tree" style="border-bottom:none;">
+    <span class="story-mark">Hackathon Prototype &middot; In Progress</span>
+    <h3>Hollow Tree: A Private Space to Ask What You Can't Ask Anyone</h3>
+    <p>Many people carry health questions they feel unable to ask anyone, about their bodies, their identity or their mental health, because of stigma. Hollow Tree is a private AI companion for exactly that moment. It gives confidential, non-clinical guidance grounded in vetted health sources, with no sign-up.</p>
+
+    <div class="beats">
+      <div class="beat">
+        <span class="beat-label">Role</span>
+        <p><span class="todo">[Your role on the team, for example product, marketing, design or research. Who else was on it?]</span></p>
+      </div>
+      <div class="beat">
+        <span class="beat-label">What I did</span>
+        <p><span class="todo">[Your part in two or three sentences: for example the problem framing, who it is for, the copy, the safety rules, the decoy screen, testing.]</span></p>
+      </div>
+      <div class="beat">
+        <span class="beat-label">Outcome</span>
+        <p>A working prototype, still in progress. <span class="todo">[Add the hackathon result or any feedback you got, if there is one.]</span></p>
+      </div>
+    </div>
+
+    <ul class="how-list">
+      <li><strong>Nothing to give away.</strong> No account, name or email. The conversation stays in the browser on the person's own device.</li>
+      <li><strong>Answers with sources.</strong> Replies draw on a vetted list of trusted organisations, such as the WHO, UNICEF and the NHS, and show where each answer comes from.</li>
+      <li><strong>A quick exit.</strong> One key press, or one tap on a phone, swaps the screen for an ordinary-looking weather page, and the same key brings the conversation back.</li>
+      <li><strong>Clear limits.</strong> It acts as a speaking partner, never a therapist. If someone may be in danger, it says it is worried and points to helplines.</li>
+    </ul>
+
+    <figure class="build-figure">
+      <img src="assets/builds/hollow-tree-home.jpg" width="1400" height="788" alt="The Hollow Tree start screen. A heading reads 'Say the thing you can't say', with a short line promising no account, no name and no email, four gentle conversation starters and a message box.">
+      <figcaption>The first screen: no account, no name, no email, and a few gentle ways to begin.</figcaption>
+    </figure>
+
+    <div class="stack-label">Built with</div>
+    <div class="build-stack">
+      <span class="badge">Lovable</span>
+      <span class="badge">React + TypeScript</span>
+      <span class="badge">TanStack Start</span>
+      <span class="badge">Tailwind CSS</span>
+      <span class="badge">Supabase</span>
+      <span class="badge">NVIDIA Nemotron on Nebius</span>
+      <span class="badge">Tavily search</span>
+    </div>
+
+    <div class="asset-links">
+      <a class="asset-link" href="https://preview--hollow-tree.lovable.app/?__lovable_sha=476821ae" target="_blank" rel="noopener"><span class="arrow">&#8599;</span> Try The Prototype</a>
+    </div>
+    <p class="build-note">This is a demonstration prototype and not medical advice. Please do not enter personal details.</p>
+  </div>
+</section>
+
+<section class="closing">
+  <div class="wrap">
+    <h2>Let's build something.</h2>
+    <p>I'm always up for a conversation about products, storytelling, or the next hard puzzle worth solving.</p>
+    <a class="closing-link" href="https://www.linkedin.com/in/megha-sainath" target="_blank" rel="noopener">Connect on LinkedIn &#8594;</a>
+  </div>
+</section>
+
+<footer class="site-footer">Megha Sainath — Portfolio, 2026</footer>
+
+</body>
+</html>
