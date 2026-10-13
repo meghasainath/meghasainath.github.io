@@ -528,7 +528,10 @@ footer.site-footer{
 }
 .build-stack{display:flex; flex-wrap:wrap; gap:10px; margin:10px 0 32px;}
 .build-stack .badge{padding:8px 14px; font-size:12px;}
-.build-figure{margin:0 0 28px; max-width:760px;}
+.build-shots{display:flex; flex-wrap:wrap; align-items:flex-end; gap:24px; margin:0 0 28px; max-width:820px;}
+.build-figure{margin:0;}
+.build-figure.phone{flex:0 0 240px; max-width:240px;}
+.build-figure.desk{flex:1 1 320px; min-width:0;}
 .build-figure img{width:100%; height:auto; display:block; border:1px solid var(--rule); border-radius:2px;}
 .build-figure figcaption{font-size:13px; color:var(--ink-soft); margin-top:8px;}
 .build-note{font-size:14px !important; margin-top:18px; margin-bottom:0 !important;}
@@ -582,10 +585,16 @@ footer.site-footer{
       <li><strong>Clear limits.</strong> It acts as a speaking partner, never a therapist. If someone may be in danger, it says it is worried and points to helplines.</li>
     </ul>
 
-    <figure class="build-figure">
-      <img src="assets/builds/hollow-tree-home.jpg" width="1400" height="788" alt="The Hollow Tree start screen. A heading reads 'Say the thing you can't say', with a short line promising no account, no name and no email, four gentle conversation starters and a message box.">
-      <figcaption>The first screen: no account, no name, no email, and a few gentle ways to begin.</figcaption>
-    </figure>
+    <div class="build-shots">
+      <figure class="build-figure phone">
+        <img src="assets/builds/hollow-tree-phone.jpg" width="708" height="1168" alt="Hollow Tree on a phone. The heading reads 'Say the thing you can't say', with a line promising no account, no name and no email, gentle conversation starters, a message box, and Talk, Read and Help tabs along the bottom.">
+        <figcaption>On a phone, where it is meant to be used.</figcaption>
+      </figure>
+      <figure class="build-figure desk">
+        <img src="assets/builds/hollow-tree-home.jpg" width="1400" height="788" alt="The same start screen on a laptop, with four gentle conversation starters and a message box.">
+        <figcaption>The same first screen on a laptop: no account, no name, no email.</figcaption>
+      </figure>
+    </div>
 
     <div class="stack-label">Built with</div>
     <div class="build-stack">
