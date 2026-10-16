@@ -469,6 +469,27 @@ footer.site-footer{
   .wrap{padding-left:22px; padding-right:22px;}
   section{padding:64px 0;}
 }
+
+/* ---------- Click-to-enlarge screenshots ---------- */
+.zoomable{cursor:zoom-in;}
+.lightbox{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(29,26,22,0.88);
+  z-index:999;
+  align-items:center;
+  justify-content:center;
+  padding:40px;
+  cursor:zoom-out;
+}
+.lightbox.is-open{display:flex;}
+.lightbox img{
+  max-width:100%;
+  max-height:100%;
+  border-radius:2px;
+  box-shadow:0 20px 60px rgba(0,0,0,0.4);
+}
 </style>
 </head>
 <body>
@@ -519,31 +540,35 @@ footer.site-footer{
            style="display:block; width:200px; height:auto; border:1px solid var(--rule); border-radius:2px;">
     </div>
 
+    <div class="asset-links" style="margin-bottom:24px;">
+      <a class="asset-link" href="https://drive.google.com/file/d/1eun937c0V1ErrOKG_ut8VZGLYSKFqfzA/view?usp=drive_link" target="_blank" rel="noopener"><span class="arrow">&#8599;</span> View The Nurture Guide</a>
+    </div>
+
     <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr)); gap:24px 20px; margin-bottom:12px;">
       <figure style="margin:0;">
-        <img src="assets/work/zenthor-library.jpg" width="1400" height="788" loading="lazy" alt="A technology company's content library, organised into topics for its Europe sales team."
+        <img class="zoomable" src="assets/work/zenthor-library.jpg" width="1400" height="788" loading="lazy" alt="A technology company's content library, organised into topics for its Europe sales team."
+             onclick="openLightbox(this.src, this.alt)"
              style="display:block; width:100%; height:auto; border:1px solid var(--rule); border-radius:2px; background:#fff;">
         <figcaption style="font-size:13px; color:var(--ink-soft); margin-top:8px;">A technology company's library, organised for its Europe sales team.</figcaption>
       </figure>
       <figure style="margin:0;">
-        <img src="assets/work/apex-buyer-page.jpg" width="1400" height="788" loading="lazy" alt="A buyer page tailored to a healthcare prospect, with five journey stages and case study, ROI calculator and integration content."
+        <img class="zoomable" src="assets/work/apex-buyer-page.jpg" width="1400" height="788" loading="lazy" alt="A buyer page tailored to a healthcare prospect, with five journey stages and case study, ROI calculator and integration content."
+             onclick="openLightbox(this.src, this.alt)"
              style="display:block; width:100%; height:auto; border:1px solid var(--rule); border-radius:2px; background:#fff;">
         <figcaption style="font-size:13px; color:var(--ink-soft); margin-top:8px;">A buyer page tailored to one healthcare prospect.</figcaption>
       </figure>
       <figure style="margin:0;">
-        <img src="assets/work/bfsi-training.jpg" width="1400" height="788" loading="lazy" alt="The training hub for a bank's sales reps, with courses, a cold-call simulation and podcasts."
+        <img class="zoomable" src="assets/work/bfsi-training.jpg" width="1400" height="788" loading="lazy" alt="The training hub for a bank's sales reps, with courses, a cold-call simulation and podcasts."
+             onclick="openLightbox(this.src, this.alt)"
              style="display:block; width:100%; height:auto; border:1px solid var(--rule); border-radius:2px; background:#fff;">
         <figcaption style="font-size:13px; color:var(--ink-soft); margin-top:8px;">Training for a bank's reps: courses, a cold-call simulation and podcasts.</figcaption>
       </figure>
       <figure style="margin:0;">
-        <img src="assets/work/bfsi-reports.jpg" width="1400" height="788" loading="lazy" alt="A reporting page for a bank's demo environment, showing asset views, conversations and content discovery."
+        <img class="zoomable" src="assets/work/bfsi-reports.jpg" width="1400" height="788" loading="lazy" alt="A reporting page for a bank's demo environment, showing asset views, conversations and content discovery."
+             onclick="openLightbox(this.src, this.alt)"
              style="display:block; width:100%; height:auto; border:1px solid var(--rule); border-radius:2px; background:#fff;">
         <figcaption style="font-size:13px; color:var(--ink-soft); margin-top:8px;">Activity reports for a bank's environment.</figcaption>
       </figure>
-    </div>
-
-    <div class="asset-links">
-      <a class="asset-link" href="https://drive.google.com/file/d/1eun937c0V1ErrOKG_ut8VZGLYSKFqfzA/view?usp=drive_link" target="_blank" rel="noopener"><span class="arrow">&#8599;</span> View The Nurture Guide</a>
     </div>
   </div>
 
@@ -608,6 +633,25 @@ footer.site-footer{
 </section>
 
 <footer class="site-footer">Megha Sainath — Portfolio, 2026</footer>
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img" src="" alt="">
+</div>
+<script>
+function openLightbox(src, alt){
+  var lb = document.getElementById('lightbox');
+  var img = document.getElementById('lightbox-img');
+  img.src = src;
+  img.alt = alt;
+  lb.classList.add('is-open');
+}
+function closeLightbox(){
+  document.getElementById('lightbox').classList.remove('is-open');
+}
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Escape') closeLightbox();
+});
+</script>
 
 </body>
 </html>
