@@ -193,6 +193,27 @@ section{padding:100px 0;}
 }
 .asset-link .arrow{color:var(--mustard); font-size:14px;}
 
+/* ---------- Click-to-enlarge screenshots ---------- */
+.zoomable{cursor:zoom-in;}
+.lightbox{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(29,26,22,0.88);
+  z-index:999;
+  align-items:center;
+  justify-content:center;
+  padding:40px;
+  cursor:zoom-out;
+}
+.lightbox.is-open{display:flex;}
+.lightbox img{
+  max-width:100%;
+  max-height:100%;
+  border-radius:2px;
+  box-shadow:0 20px 60px rgba(0,0,0,0.4);
+}
+
 /* ---------- Closing ---------- */
 footer.site-footer{
   font-family:'Space Mono', monospace;
@@ -243,11 +264,54 @@ footer.site-footer{
   <div class="wrap story-simple" style="border-bottom:none;">
     <span class="story-mark">Multiplayer Game · SheBuilds Hackathon</span>
     <h3>Scatterbrain</h3>
-    <p>A party game where everyone privately chats with a fact-giving bot, their answers get tagged and clustered in real time, and the group races to guess the emerging consensus as it forms on a shared screen. Built on Supabase for the SheBuilds Season 04 hackathon, and grown out of an earlier prototype, Hollow Tree, where phones became controllers for a shared on-screen game.</p>
+    <p>Built solo in Lovable for <a href="https://shebuilds.lovable.app" target="_blank" rel="noopener">SheBuilds Season 04</a>: everyone chats privately with an AI that quietly nudges their conversations toward shared topics. A live force-directed graph clusters those topics and tracks who's circling which one, but each stays anonymous until another player correctly guesses what it is and claims the label. Scores stay hidden until the round ends, then are revealed together, with the winner's name pinned at the top.</p>
+    <div class="asset-links" style="margin-bottom:24px;">
+      <a class="asset-link" href="https://scatterbrain.lovable.app" target="_blank" rel="noopener"><span class="arrow">&#8599;</span> Play Scatterbrain</a>
+    </div>
+
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr)); gap:20px;">
+      <figure style="margin:0;">
+        <img class="zoomable" src="assets/work/scatterbrain-lobby.jpg" width="800" height="600" loading="lazy" alt="Scatterbrain's lobby screen, with display name, round-length picker, a private-game toggle and a list of open public games."
+             onclick="openLightbox(this.src, this.alt)"
+             style="display:block; width:100%; height:auto; border:1px solid var(--rule); border-radius:2px;">
+        <figcaption style="font-size:13px; color:var(--ink-soft); margin-top:8px;">Lobby: round length, privacy toggle, open games.</figcaption>
+      </figure>
+      <figure style="margin:0;">
+        <img class="zoomable" src="assets/work/scatterbrain-gameplay.jpg" width="800" height="600" loading="lazy" alt="A Scatterbrain chat with the AI, with the live force-directed convergence graph rendering alongside it, player's own name visible and others anonymous."
+             onclick="openLightbox(this.src, this.alt)"
+             style="display:block; width:100%; height:auto; border:1px solid var(--rule); border-radius:2px;">
+        <figcaption style="font-size:13px; color:var(--ink-soft); margin-top:8px;">In-game: chat plus the live convergence graph.</figcaption>
+      </figure>
+      <figure style="margin:0;">
+        <img class="zoomable" src="assets/work/scatterbrain-monitor.jpg" width="800" height="600" loading="lazy" alt="Scatterbrain's Monitor page showing a finished two-player game's full convergence graph, with a correctly-guessed topic labelled."
+             onclick="openLightbox(this.src, this.alt)"
+             style="display:block; width:100%; height:auto; border:1px solid var(--rule); border-radius:2px;">
+        <figcaption style="font-size:13px; color:var(--ink-soft); margin-top:8px;">Monitor: a finished game's full graph.</figcaption>
+      </figure>
+    </div>
   </div>
 </section>
 
 <footer class="site-footer">Megha Sainath — Portfolio, 2026</footer>
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img" src="" alt="">
+</div>
+<script>
+function openLightbox(src, alt){
+  var lb = document.getElementById('lightbox');
+  var img = document.getElementById('lightbox-img');
+  img.src = src;
+  img.alt = alt;
+  lb.classList.add('is-open');
+}
+function closeLightbox(){
+  document.getElementById('lightbox').classList.remove('is-open');
+}
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Escape') closeLightbox();
+});
+</script>
 
 </body>
 </html>
