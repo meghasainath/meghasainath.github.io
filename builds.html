@@ -5,16 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Builds — Megha Sainath</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=Space+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;0,6..72,800;1,6..72,400;1,6..72,500;1,6..72,600&display=swap');
 
 :root{
-  --paper: #F8F7F4;
-  --paper-warm: #EEEDE8;
-  --ink: #17191C;
-  --ink-soft: #52555B;
-  --trust-blue: #1E3A5F;
-  --coral: #E8623A;
-  --rule: #DCDAD3;
+  --paper: #F5F1E8;
+  --paper-warm: #EDE6D8;
+  --ink: #241D18;
+  --ink-soft: #6B5F55;
+  --accent: #7A2E2E;
+  --accent-on-dark: #E2A0A0;
+  --rule: #DED4C3;
 }
 
 *{box-sizing:border-box; margin:0; padding:0;}
@@ -22,7 +22,7 @@ html{scroll-behavior:smooth;}
 body{
   background:var(--paper);
   color:var(--ink);
-  font-family:'Inter', sans-serif;
+  font-family:'Newsreader', serif;
   line-height:1.6;
   overflow-x:hidden;
 }
@@ -30,8 +30,8 @@ body{
   html{scroll-behavior:auto;}
   *{animation-duration:0.01ms !important; transition-duration:0.01ms !important;}
 }
-a{color:var(--trust-blue);}
-a:focus-visible, button:focus-visible{outline:2px solid var(--trust-blue); outline-offset:3px;}
+a{color:var(--accent);}
+a:focus-visible, button:focus-visible{outline:2px solid var(--accent); outline-offset:3px;}
 .wrap{max-width:1040px; margin:0 auto; padding:0 32px;}
 
 /* ---------- Nav ---------- */
@@ -47,17 +47,17 @@ a:focus-visible, button:focus-visible{outline:2px solid var(--trust-blue); outli
   z-index:50;
 }
 .site-nav .brand{
-  font-family:'Fraunces', serif;
+  font-family:'Newsreader', serif;
   font-weight:600;
   font-size:18px;
-  color:var(--coral);
+  color:var(--accent);
   text-decoration:none;
   letter-spacing:-0.01em;
 }
 .site-nav .links{
   display:flex;
   gap:32px;
-  font-family:'Space Mono', monospace;
+  font-family:'Newsreader', serif;
   font-size:12px;
   letter-spacing:0.08em;
   text-transform:uppercase;
@@ -69,8 +69,8 @@ a:focus-visible, button:focus-visible{outline:2px solid var(--trust-blue); outli
   border-bottom:1px solid transparent;
   transition:color .2s ease, border-color .2s ease;
 }
-.site-nav .links a:hover{color:var(--trust-blue);}
-.site-nav .links a.active{color:var(--trust-blue); border-color:var(--coral);}
+.site-nav .links a:hover{color:var(--accent);}
+.site-nav .links a.active{color:var(--ink); font-weight:600; border-color:var(--accent);}
 @media (max-width:560px){
   .site-nav{flex-wrap:wrap; gap:10px 20px; padding:18px 24px;}
   .site-nav .brand{font-size:16px;}
@@ -81,14 +81,14 @@ a:focus-visible, button:focus-visible{outline:2px solid var(--trust-blue); outli
 section{padding:100px 0;}
 .page-head{padding:80px 0 0;}
 .page-head h1{
-  font-family:'Fraunces', serif;
+  font-family:'Newsreader', serif;
   font-weight:600;
   font-size:clamp(40px,7vw,72px);
   line-height:1;
 }
 .page-head .rule{
   width:64px; height:2px;
-  background:var(--trust-blue);
+  background:var(--accent);
   margin-top:22px;
 }
 .section-head{
@@ -100,14 +100,13 @@ section{padding:100px 0;}
   flex-wrap:wrap;
 }
 .section-label{
-  font-family:'Space Mono', monospace;
+  font-family:'Newsreader', serif;
   font-size:13px;
-  letter-spacing:0.12em;
-  text-transform:uppercase;
-  color:var(--trust-blue);
+  font-weight:600;
+  color:var(--ink-soft);
 }
 .section-head h2{
-  font-family:'Fraunces', serif;
+  font-family:'Newsreader', serif;
   font-weight:600;
   font-size:clamp(30px,4vw,44px);
 }
@@ -128,16 +127,14 @@ section{padding:100px 0;}
   border-bottom:1px solid var(--rule);
 }
 .story-simple .story-mark{
-  font-family:'Space Mono', monospace;
-  font-size:12px;
-  letter-spacing:0.12em;
-  text-transform:uppercase;
-  color:var(--trust-blue);
-  margin-bottom:14px;
+  font-family:'Newsreader', serif;
+  font-size:14px;
+  color:var(--ink-soft);
+  margin-bottom:6px;
   display:block;
 }
 .story-simple h3{
-  font-family:'Fraunces', serif;
+  font-family:'Newsreader', serif;
   font-weight:600;
   font-size:clamp(26px,3.5vw,34px);
   margin-bottom:20px;
@@ -150,7 +147,7 @@ section{padding:100px 0;}
   margin-bottom:24px;
 }
 .story-simple p a{
-  color:var(--trust-blue);
+  color:var(--accent);
   text-decoration:underline;
   text-decoration-color:var(--rule);
   text-underline-offset:3px;
@@ -175,7 +172,7 @@ section{padding:100px 0;}
   display:inline-flex;
   align-items:center;
   gap:10px;
-  font-family:'Space Mono', monospace;
+  font-family:'Newsreader', serif;
   font-size:13px;
   color:var(--ink);
   text-decoration:none;
@@ -187,11 +184,10 @@ section{padding:100px 0;}
   cursor:pointer;
 }
 .asset-link:hover{
-  border-color:var(--trust-blue);
-  color:var(--trust-blue);
+  border-color:var(--accent);
+  color:var(--accent);
   transform:translateY(-2px);
 }
-.asset-link .arrow{color:var(--trust-blue); font-size:14px;}
 
 /* ---------- Click-to-enlarge screenshots ---------- */
 .zoomable{cursor:zoom-in;}
@@ -216,7 +212,7 @@ section{padding:100px 0;}
 
 /* ---------- Closing ---------- */
 footer.site-footer{
-  font-family:'Space Mono', monospace;
+  font-family:'Newsreader', serif;
   font-size:11px;
   color:#8B8570;
   padding:40px 32px;
@@ -257,11 +253,10 @@ footer.site-footer{
 
 <section style="padding-top:20px;">
   <div class="wrap story-simple">
-    <span class="story-mark">Product Marketing Tool · Lovable Hackathon</span>
     <h3>Compete</h3>
     <p>Built solo in Lovable, Compete runs an AI teardown of a competitor's positioning and puts it to work on two layers. Internally, it's a battlecard wherein sales reps get objection handling and landmine questions to use live on calls, and it sharpens how you position your own product against that competitor. Externally, the same teardown becomes content: an "alternatives" or comparison page laying out the differentiation for anyone in the market evaluating options. Every report can be downloaded as a clean PDF to share outside the tool.</p>
     <div class="asset-links" style="margin-bottom:24px;">
-      <a class="asset-link" href="https://id-preview--6b529e19-0232-4d8a-a97a-70483f2aed7c.lovable.app" target="_blank" rel="noopener"><span class="arrow">&#8599;</span> Try Compete</a>
+      <a class="asset-link" href="https://id-preview--6b529e19-0232-4d8a-a97a-70483f2aed7c.lovable.app" target="_blank" rel="noopener">Try Compete</a>
     </div>
     <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr)); gap:20px;">
       <figure style="margin:0;">
@@ -286,11 +281,10 @@ footer.site-footer{
   </div>
 
   <div class="wrap story-simple">
-    <span class="story-mark">Care Coordination App · Microsoft Healthcare Hackathon</span>
     <h3>CarePath</h3>
     <p>Built solo in Lovable for the Microsoft Healthcare Hackathon: patients moving through multi-specialty care rarely know which doctors they'll meet, in what order, or why. CarePath lays out the whole treatment journey as a clear, living timeline, with a doctor's note updating a patient's progress and the hospital's incoming-patient view at the same time. When a stage happens at a different clinic, even in another region, that facility gets the case history before the patient walks in.</p>
     <div class="asset-links" style="margin-bottom:24px;">
-      <a class="asset-link" href="https://carepathmapper.lovable.app/" target="_blank" rel="noopener"><span class="arrow">&#8599;</span> Open CarePath</a>
+      <a class="asset-link" href="https://carepathmapper.lovable.app/" target="_blank" rel="noopener">Open CarePath</a>
     </div>
     <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr)); gap:20px;">
       <figure style="margin:0;">
@@ -315,11 +309,10 @@ footer.site-footer{
   </div>
 
   <div class="wrap story-simple">
-    <span class="story-mark">Multiplayer Game · SheBuilds Hackathon</span>
     <h3>Scatterbrain</h3>
     <p>Built solo in Lovable for <a href="https://shebuilds.lovable.app" target="_blank" rel="noopener">SheBuilds Season 04</a>: everyone chats privately with an AI that quietly nudges their conversations toward shared topics. A live force-directed graph clusters those topics and tracks who's circling which one, but each stays anonymous until another player correctly guesses what it is and claims the label. Scores stay hidden until the round ends, then are revealed together, with the winner's name pinned at the top.</p>
     <div class="asset-links" style="margin-bottom:24px;">
-      <a class="asset-link" href="https://scatterbrain.lovable.app" target="_blank" rel="noopener"><span class="arrow">&#8599;</span> Play Scatterbrain</a>
+      <a class="asset-link" href="https://scatterbrain.lovable.app" target="_blank" rel="noopener">Play Scatterbrain</a>
     </div>
 
     <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr)); gap:20px;">
@@ -345,7 +338,6 @@ footer.site-footer{
   </div>
 
   <div class="wrap story-simple" style="border-bottom:none;">
-    <span class="story-mark">Confidential AI Companion · Team Hackathon · Work in progress</span>
     <h3>Hollow Tree</h3>
     <p>Built with <a href="https://www.linkedin.com/in/gorantq/" target="_blank" rel="noopener">Göran Törnquist</a> and <a href="https://www.linkedin.com/in/tianlinshao/" target="_blank" rel="noopener">Tianlin Shao</a> for the Nebius × NVIDIA Global AI Hackathon: a confidential AI speaking partner, not a therapist, for people who stay silent on stigmatized health topics — puberty, sexual health, men's mental health, questioning their identity. Every answer is grounded in vetted sources like the WHO, with a one-tap quick-exit that flips the screen to a decoy weather app if someone walks in. It's the project that got me hooked on building, not just marketing, AI products — still in progress toward our submission, with voice input and a public link on the way.</p>
 

@@ -5,16 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Experience — Megha Sainath</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=Space+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;0,6..72,800;1,6..72,400;1,6..72,500;1,6..72,600&display=swap');
 
 :root{
-  --paper: #F8F7F4;
-  --paper-warm: #EEEDE8;
-  --ink: #17191C;
-  --ink-soft: #52555B;
-  --trust-blue: #1E3A5F;
-  --coral: #E8623A;
-  --rule: #DCDAD3;
+  --paper: #F5F1E8;
+  --paper-warm: #EDE6D8;
+  --ink: #241D18;
+  --ink-soft: #6B5F55;
+  --accent: #7A2E2E;
+  --accent-on-dark: #E2A0A0;
+  --rule: #DED4C3;
 }
 
 *{box-sizing:border-box; margin:0; padding:0;}
@@ -22,7 +22,7 @@ html{scroll-behavior:smooth;}
 body{
   background:var(--paper);
   color:var(--ink);
-  font-family:'Inter', sans-serif;
+  font-family:'Newsreader', serif;
   line-height:1.6;
   overflow-x:hidden;
 }
@@ -30,8 +30,8 @@ body{
   html{scroll-behavior:auto;}
   *{animation-duration:0.01ms !important; transition-duration:0.01ms !important;}
 }
-a{color:var(--trust-blue);}
-a:focus-visible, button:focus-visible{outline:2px solid var(--trust-blue); outline-offset:3px;}
+a{color:var(--accent);}
+a:focus-visible, button:focus-visible{outline:2px solid var(--accent); outline-offset:3px;}
 .wrap{max-width:1040px; margin:0 auto; padding:0 32px;}
 
 /* ---------- Nav ---------- */
@@ -47,17 +47,17 @@ a:focus-visible, button:focus-visible{outline:2px solid var(--trust-blue); outli
   z-index:50;
 }
 .site-nav .brand{
-  font-family:'Fraunces', serif;
+  font-family:'Newsreader', serif;
   font-weight:600;
   font-size:18px;
-  color:var(--coral);
+  color:var(--accent);
   text-decoration:none;
   letter-spacing:-0.01em;
 }
 .site-nav .links{
   display:flex;
   gap:32px;
-  font-family:'Space Mono', monospace;
+  font-family:'Newsreader', serif;
   font-size:12px;
   letter-spacing:0.08em;
   text-transform:uppercase;
@@ -69,8 +69,8 @@ a:focus-visible, button:focus-visible{outline:2px solid var(--trust-blue); outli
   border-bottom:1px solid transparent;
   transition:color .2s ease, border-color .2s ease;
 }
-.site-nav .links a:hover{color:var(--trust-blue);}
-.site-nav .links a.active{color:var(--trust-blue); border-color:var(--coral);}
+.site-nav .links a:hover{color:var(--accent);}
+.site-nav .links a.active{color:var(--ink); font-weight:600; border-color:var(--accent);}
 @media (max-width:560px){
   .site-nav{flex-wrap:wrap; gap:10px 20px; padding:18px 24px;}
   .site-nav .brand{font-size:16px;}
@@ -81,14 +81,14 @@ a:focus-visible, button:focus-visible{outline:2px solid var(--trust-blue); outli
 section{padding:100px 0;}
 .page-head{padding:80px 0 0;}
 .page-head h1{
-  font-family:'Fraunces', serif;
+  font-family:'Newsreader', serif;
   font-weight:600;
   font-size:clamp(40px,7vw,72px);
   line-height:1;
 }
 .page-head .rule{
   width:64px; height:2px;
-  background:var(--trust-blue);
+  background:var(--accent);
   margin-top:22px;
 }
 .section-head{
@@ -100,14 +100,13 @@ section{padding:100px 0;}
   flex-wrap:wrap;
 }
 .section-label{
-  font-family:'Space Mono', monospace;
+  font-family:'Newsreader', serif;
   font-size:13px;
-  letter-spacing:0.12em;
-  text-transform:uppercase;
-  color:var(--trust-blue);
+  font-weight:600;
+  color:var(--ink-soft);
 }
 .section-head h2{
-  font-family:'Fraunces', serif;
+  font-family:'Newsreader', serif;
   font-weight:600;
   font-size:clamp(30px,4vw,44px);
 }
@@ -117,7 +116,7 @@ section{padding:100px 0;}
   padding:70px 0 40px;
 }
 .home-mark{
-  font-family:'Fraunces', serif;
+  font-family:'Newsreader', serif;
   font-weight:700;
   font-size:clamp(40px,8vw,88px);
   letter-spacing:-0.01em;
@@ -140,7 +139,7 @@ section{padding:100px 0;}
   filter:grayscale(6%);
 }
 .home-intro h1{
-  font-family:'Fraunces', serif;
+  font-family:'Newsreader', serif;
   font-weight:600;
   font-size:clamp(32px,4.5vw,46px);
   margin-bottom:24px;
@@ -154,7 +153,7 @@ section{padding:100px 0;}
 }
 .home-intro p a{
   font-style:italic;
-  border-bottom:1px solid var(--trust-blue);
+  border-bottom:1px solid var(--accent);
   text-decoration:none;
 }
 @media (max-width:760px){
@@ -177,10 +176,10 @@ section{padding:100px 0;}
   justify-content:center;
   text-decoration:none;
   font-size:16px;
-  font-family:'Space Mono', monospace;
+  font-family:'Newsreader', serif;
   transition:background .2s ease, transform .2s ease;
 }
-.contact-icon:hover{background:var(--trust-blue); transform:translateY(-2px);}
+.contact-icon:hover{background:var(--accent); transform:translateY(-2px);}
 
 /* ---------- Logo / badge strips ---------- */
 .badge-section{
@@ -194,7 +193,7 @@ section{padding:100px 0;}
   margin-top:20px;
 }
 .badge{
-  font-family:'Space Mono', monospace;
+  font-family:'Newsreader', serif;
   font-size:13px;
   color:var(--ink);
   background:var(--paper-warm);
@@ -218,7 +217,7 @@ section{padding:100px 0;}
   max-width:520px;
 }
 .about-grid p:first-child{
-  font-family:'Fraunces', serif;
+  font-family:'Newsreader', serif;
   font-size:26px;
   font-weight:500;
   color:var(--ink);
@@ -238,7 +237,7 @@ section{padding:100px 0;}
   gap:20px;
 }
 .trait-k{
-  font-family:'Space Mono', monospace;
+  font-family:'Newsreader', serif;
   font-size:12px;
   color:var(--ink-soft);
   text-transform:uppercase;
@@ -256,15 +255,15 @@ section{padding:100px 0;}
   display:inline-flex;
   align-items:center;
   gap:10px;
-  font-family:'Fraunces', serif;
+  font-family:'Newsreader', serif;
   font-weight:600;
   font-size:28px;
   color:var(--ink);
   text-decoration:none;
-  border-bottom:2px solid var(--coral);
+  border-bottom:2px solid var(--accent);
   padding-bottom:6px;
 }
-.resume-link:hover{color:var(--trust-blue);}
+.resume-link:hover{color:var(--accent);}
 
 /* ---------- Experience timeline ---------- */
 .experience{border-bottom:1px solid var(--rule);}
@@ -277,21 +276,21 @@ section{padding:100px 0;}
   border-bottom:1px solid var(--rule);
 }
 .exp-dates{
-  font-family:'Space Mono', monospace;
+  font-family:'Newsreader', serif;
   font-size:13px;
   color:var(--ink-soft);
   padding-top:4px;
 }
 .exp-main h3{
-  font-family:'Fraunces', serif;
+  font-family:'Newsreader', serif;
   font-weight:600;
   font-size:22px;
   margin-bottom:6px;
 }
 .exp-co{
-  font-family:'Inter', sans-serif;
+  font-family:'Newsreader', serif;
   font-size:14px;
-  color:var(--trust-blue);
+  color:var(--accent);
   font-weight:600;
   margin-bottom:12px;
 }
@@ -310,16 +309,14 @@ section{padding:100px 0;}
   border-bottom:1px solid var(--rule);
 }
 .story-simple .story-mark{
-  font-family:'Space Mono', monospace;
-  font-size:12px;
-  letter-spacing:0.12em;
-  text-transform:uppercase;
-  color:var(--trust-blue);
-  margin-bottom:14px;
+  font-family:'Newsreader', serif;
+  font-size:14px;
+  color:var(--ink-soft);
+  margin-bottom:6px;
   display:block;
 }
 .story-simple h3{
-  font-family:'Fraunces', serif;
+  font-family:'Newsreader', serif;
   font-weight:600;
   font-size:clamp(26px,3.5vw,34px);
   margin-bottom:20px;
@@ -332,7 +329,7 @@ section{padding:100px 0;}
   margin-bottom:24px;
 }
 .story-simple p a{
-  color:var(--trust-blue);
+  color:var(--accent);
   text-decoration:underline;
   text-decoration-color:var(--rule);
   text-underline-offset:3px;
@@ -357,7 +354,7 @@ section{padding:100px 0;}
   display:inline-flex;
   align-items:center;
   gap:10px;
-  font-family:'Space Mono', monospace;
+  font-family:'Newsreader', serif;
   font-size:13px;
   color:var(--ink);
   text-decoration:none;
@@ -369,11 +366,10 @@ section{padding:100px 0;}
   cursor:pointer;
 }
 .asset-link:hover{
-  border-color:var(--trust-blue);
-  color:var(--trust-blue);
+  border-color:var(--accent);
+  color:var(--accent);
   transform:translateY(-2px);
 }
-.asset-link .arrow{color:var(--trust-blue); font-size:14px;}
 
 /* ---------- Interests: books ---------- */
 .book-list{
@@ -389,13 +385,13 @@ section{padding:100px 0;}
   border-bottom:1px solid var(--rule);
 }
 .book-title{
-  font-family:'Fraunces', serif;
+  font-family:'Newsreader', serif;
   font-size:19px;
   font-weight:500;
   color:var(--ink);
 }
 .book-author{
-  font-family:'Space Mono', monospace;
+  font-family:'Newsreader', serif;
   font-size:12px;
   color:var(--ink-soft);
   text-transform:uppercase;
@@ -427,7 +423,7 @@ section{padding:100px 0;}
   text-align:left;
 }
 .closing h2{
-  font-family:'Fraunces', serif;
+  font-family:'Newsreader', serif;
   font-weight:600;
   font-size:clamp(36px,6vw,64px);
   max-width:700px;
@@ -444,16 +440,16 @@ section{padding:100px 0;}
   align-items:center;
   gap:10px;
   margin-top:40px;
-  font-family:'Space Mono', monospace;
+  font-family:'Newsreader', serif;
   font-size:14px;
   color:var(--paper);
   text-decoration:none;
-  border-bottom:1px solid var(--coral);
+  border-bottom:1px solid var(--accent-on-dark);
   padding-bottom:6px;
 }
-.closing-link:hover{color:var(--coral);}
+.closing-link:hover{color:var(--accent-on-dark);}
 footer.site-footer{
-  font-family:'Space Mono', monospace;
+  font-family:'Newsreader', serif;
   font-size:11px;
   color:#8B8570;
   padding:40px 32px;
@@ -518,14 +514,12 @@ footer.site-footer{
   <div class="wrap">
     <div class="section-head">
       <div>
-        <div class="section-label"></div>
         <h2>Selected Work</h2>
       </div>
     </div>
   </div>
 
   <div class="wrap story-simple" id="sales-enablement" style="padding-top:0;">
-    <span class="story-mark">Sales Enablement · Product Marketing</span>
     <h3>Giving Sales a Ready-Made Pitch for Every Industry</h3>
 
     <div style="display:flex; flex-wrap:wrap; align-items:flex-start; gap:24px; margin-bottom:12px;">
@@ -542,7 +536,7 @@ footer.site-footer{
     </div>
 
     <div class="asset-links" style="margin-bottom:24px;">
-      <a class="asset-link" href="https://drive.google.com/file/d/1eun937c0V1ErrOKG_ut8VZGLYSKFqfzA/view?usp=drive_link" target="_blank" rel="noopener"><span class="arrow">&#8599;</span> View The Nurture Guide</a>
+      <a class="asset-link" href="https://drive.google.com/file/d/1eun937c0V1ErrOKG_ut8VZGLYSKFqfzA/view?usp=drive_link" target="_blank" rel="noopener">View The Nurture Guide</a>
     </div>
 
     <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr)); gap:24px 20px; margin-bottom:12px;">
@@ -574,7 +568,6 @@ footer.site-footer{
   </div>
 
   <div class="wrap story-simple">
-    <span class="story-mark">Content Marketing · Event Campaign</span>
     <h3>One Funnel, One Conference: Content from Awareness to Proof</h3>
     <p>As vertical content lead at Hexaware, I worked as a strategic content partner for the travel and hospitality vertical, turning our industry leaders' vision into a Q1 content calendar that built momentum for a global Aviation Round Table conference. I storyboarded it as a marketing funnel. At the Awareness stage, a video I scripted on transforming travel, transportation and hospitality introduced the industry story. The Interest stage included a challenge-and-solution flyer, "Revolutionizing Aviation IT," that hooked time-pressed executives with urgent industry pain points. At the Decision stage, a Middle Eastern airline case study provided the proof, built around a four-month shift from distance-based to spend-based loyalty and its effect on revenue and passenger retention. Targeted drip emails and social campaigns carried the sequence up to the conference. The flyer increased inbound inquiries and drove registrations, and the case study became a primary asset for the sales team.</p>
 
@@ -597,14 +590,13 @@ footer.site-footer{
     </div>
 
     <div class="asset-links">
-      <a class="asset-link" href="https://www.youtube.com/watch?v=gSxJFTgvxyQ" target="_blank" rel="noopener"><span class="arrow">&#9654;</span> Watch The Industry Story Video</a>
-      <a class="asset-link" href="https://drive.google.com/file/d/1xWz88suCkTfTvW5YwFqP1Cr_NkJlIor2/view?usp=drive_link" target="_blank" rel="noopener"><span class="arrow">&#8599;</span> Read The Aviation Flyer</a>
-      <a class="asset-link" href="https://drive.google.com/file/d/1Afoao-SLeG8CeZ0Pm-8Ebcxg_6IBWRZR/view?usp=drive_link" target="_blank" rel="noopener"><span class="arrow">&#8599;</span> See The Case Study</a>
+      <a class="asset-link" href="https://www.youtube.com/watch?v=gSxJFTgvxyQ" target="_blank" rel="noopener">Watch The Industry Story Video</a>
+      <a class="asset-link" href="https://drive.google.com/file/d/1xWz88suCkTfTvW5YwFqP1Cr_NkJlIor2/view?usp=drive_link" target="_blank" rel="noopener">Read The Aviation Flyer</a>
+      <a class="asset-link" href="https://drive.google.com/file/d/1Afoao-SLeG8CeZ0Pm-8Ebcxg_6IBWRZR/view?usp=drive_link" target="_blank" rel="noopener">See The Case Study</a>
     </div>
   </div>
 
   <div class="wrap story-simple" style="border-bottom:none;">
-    <span class="story-mark">Employer Branding · Video Campaign</span>
     <h3>Faces of Hexaware Campaign</h3>
     <div style="display:flex; flex-wrap:wrap; align-items:flex-start; gap:24px; margin-bottom:20px;">
       <p style="margin:0; flex:1 1 300px; max-width:700px;">Serving as Content Lead, I transitioned employer branding from static assets to the "Faces of Hexaware" video series, directing 90+ testimonials across three office locations to showcase employee journeys. I coordinated with the Branding, Learning &amp; Development, and Video Production heads, selected employees from different departments, coached participants on their scripts onsite, stepped in to direct interviews, and oversaw the final cuts, subtitles, and LinkedIn and Instagram copy. By the second phase, employees were asking to be featured, and the campaign won the <a href="https://hexaware.com/press-release/hexaware-celebrates-wins-across-multiple-categories-at-the-2024-marcom-awards/" target="_blank" rel="noopener">2024 MarCom Gold Award for Social Media Campaign</a>.</p>
@@ -613,7 +605,7 @@ footer.site-footer{
     </div>
 
     <div class="asset-links">
-      <a class="asset-link" href="https://lnkd.in/p/dwEYCkcQ" target="_blank" rel="noopener"><span class="arrow">&#9654;</span> Watch The Campaign Video</a>
+      <a class="asset-link" href="https://lnkd.in/p/dwEYCkcQ" target="_blank" rel="noopener">Watch The Campaign Video</a>
     </div>
   </div>
 </section>
@@ -622,7 +614,6 @@ footer.site-footer{
   <div class="wrap">
     <div class="section-head">
       <div>
-        <div class="section-label"></div>
         <h2>Volunteering</h2>
       </div>
     </div>
@@ -655,7 +646,7 @@ footer.site-footer{
   <div class="wrap">
     <h2>Let's work together.</h2>
     <p>I'm always up for a conversation about storytelling, product marketing, or the next hard puzzle worth solving.</p>
-    <a class="closing-link" href="https://www.linkedin.com/in/megha-sainath" target="_blank" rel="noopener">Connect on LinkedIn &#8594;</a>
+    <a class="closing-link" href="https://www.linkedin.com/in/megha-sainath" target="_blank" rel="noopener">Connect on LinkedIn</a>
   </div>
 </section>
 
