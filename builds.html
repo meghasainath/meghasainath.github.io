@@ -257,6 +257,44 @@ footer.site-footer{
 
 <section style="padding-top:20px;">
   <div class="wrap story-simple">
+    <span class="story-mark">Product Marketing Tool · Lovable Hackathon</span>
+    <h3>Compete</h3>
+    <p>Built solo in Lovable, start to finish in about an hour: product marketers and sales reps both start from the same question before a competitive deal — "what do we actually say about them?" — but usually answer it twice, once for an internal battlecard and once for public comparison content, each rebuilt from scratch per competitor. Compete runs one AI teardown of a competitor's positioning and renders it two ways, so sales-led and product-led teams both get what they need from a single pass instead of two separate projects.</p>
+    <ul>
+      <li><strong>Teardown:</strong> paste or auto-fetch a competitor's page and get their value proposition, target ICP, messaging angle, and specific exploitable gaps in their positioning.</li>
+      <li><strong>Two outputs, one source:</strong> a toggle switches the same teardown into a sales battlecard (differentiators, "when they say / you say" objection handling, landmine questions for reps) or public comparison-page copy (an intro paragraph, an "us vs. them" table, an SEO meta description).</li>
+      <li><strong>URL-or-paste input:</strong> drop in a product URL and the page's features and value prop are read automatically, with a one-click fallback to paste copy manually if a page can't be fetched (JS-rendered or bot-blocked sites).</li>
+      <li><strong>Game Film:</strong> every run is saved locally in-browser so past comparisons can be revisited instantly, no re-querying the model, no account or database.</li>
+      <li><strong>Download PDF:</strong> a print-formatted export of the full report, for sharing outside the tool.</li>
+    </ul>
+    <p>The whole UI leans into a sports-scouting metaphor on purpose, not just for fun: <strong>Home Team</strong> / <strong>Away Team</strong> for your product vs. the competitor, a <strong>Scouting Report</strong> for the shared teardown, <strong>Locker Room</strong> vs. <strong>Press Conference</strong> for the internal-vs-public toggle, <strong>Trash Talk</strong> / <strong>Your Comeback</strong> for objection handling, and <strong>Game Film</strong> for history. It reframes a task that's normally dry spreadsheet-and-doc work as something closer to prepping for a match — which is exactly the mindset competitive positioning actually calls for.</p>
+    <p style="font-size:14px; color:var(--ink-soft);">Built end-to-end in Lovable (React, TypeScript, Tailwind, shadcn/ui), with a server-side edge function handling competitor-page fetch/text-extraction and the structured-output LLM call; history persists client-side via localStorage, so there's no database or auth in this build.</p>
+    <div class="asset-links" style="margin-bottom:24px;">
+      <a class="asset-link" href="https://id-preview--6b529e19-0232-4d8a-a97a-70483f2aed7c.lovable.app" target="_blank" rel="noopener"><span class="arrow">&#8599;</span> Open Compete</a>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr)); gap:20px;">
+      <figure style="margin:0;">
+        <img class="zoomable" src="assets/work/compete-input.jpg" width="800" height="600" loading="lazy" alt="Compete's input screen with Home Team (Your product) and Away Team (Competitor) panels, each collapsed to just a Name and URL field with a 'paste details manually' fallback."
+             onclick="openLightbox(this.src, this.alt)"
+             style="display:block; width:100%; height:auto; border:1px solid var(--rule); border-radius:2px;">
+        <figcaption style="font-size:13px; color:var(--ink-soft); margin-top:8px;">One minimal input flow for both sides: name, URL, optional manual override.</figcaption>
+      </figure>
+      <figure style="margin:0;">
+        <img class="zoomable" src="assets/work/compete-teardown.jpg" width="800" height="600" loading="lazy" alt="Compete's Scouting Report for a competitor, showing its value proposition, target ICP, messaging angle, and a numbered list of exploitable positioning gaps."
+             onclick="openLightbox(this.src, this.alt)"
+             style="display:block; width:100%; height:auto; border:1px solid var(--rule); border-radius:2px;">
+        <figcaption style="font-size:13px; color:var(--ink-soft); margin-top:8px;">Scouting Report: one teardown of the competitor's positioning, shared by both outputs below.</figcaption>
+      </figure>
+      <figure style="margin:0;">
+        <img class="zoomable" src="assets/work/compete-lockerroom.jpg" width="800" height="600" loading="lazy" alt="Compete's Locker Room mode, with a Locker Room / Press Conference toggle, a 'Your Stats' list of differentiators, and a 'Trash Talk' / 'Your Comeback' objection-handling pair."
+             onclick="openLightbox(this.src, this.alt)"
+             style="display:block; width:100%; height:auto; border:1px solid var(--rule); border-radius:2px;">
+        <figcaption style="font-size:13px; color:var(--ink-soft); margin-top:8px;">Same teardown, two renders: Locker Room for reps, Press Conference for public comparison copy.</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <div class="wrap story-simple">
     <span class="story-mark">Care Coordination App · Microsoft Healthcare Hackathon</span>
     <h3>CarePath</h3>
     <p>Built solo in Lovable for the Microsoft Healthcare Hackathon: patients moving through multi-specialty care rarely know which doctors they'll meet, in what order, or why. CarePath lays out the whole treatment journey as a clear, living timeline, with a doctor's note updating a patient's progress and the hospital's incoming-patient view at the same time. When a stage happens at a different clinic, even in another region, that facility gets the case history before the patient walks in.</p>
