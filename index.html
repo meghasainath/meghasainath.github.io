@@ -8,13 +8,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=Space+Mono&display=swap');
 
 :root{
-  --paper: #F6F3ED;
-  --paper-warm: #EFE9DD;
-  --ink: #1D1A16;
-  --ink-soft: #55503F;
-  --teal: #2E5C50;
-  --mustard: #C08829;
-  --rule: #D9D2C2;
+  --paper: #F8F7F4;
+  --paper-warm: #EEEDE8;
+  --ink: #17191C;
+  --ink-soft: #52555B;
+  --trust-blue: #1E3A5F;
+  --coral: #E8623A;
+  --rule: #DCDAD3;
 }
 
 *{box-sizing:border-box; margin:0; padding:0;}
@@ -30,8 +30,8 @@ body{
   html{scroll-behavior:auto;}
   *{animation-duration:0.01ms !important; transition-duration:0.01ms !important;}
 }
-a{color:var(--teal);}
-a:focus-visible, button:focus-visible{outline:2px solid var(--teal); outline-offset:3px;}
+a{color:var(--trust-blue);}
+a:focus-visible, button:focus-visible{outline:2px solid var(--trust-blue); outline-offset:3px;}
 .wrap{max-width:1040px; margin:0 auto; padding:0 32px;}
 
 /* ---------- Nav ---------- */
@@ -50,7 +50,7 @@ a:focus-visible, button:focus-visible{outline:2px solid var(--teal); outline-off
   font-family:'Fraunces', serif;
   font-weight:600;
   font-size:18px;
-  color:var(--ink);
+  color:var(--coral);
   text-decoration:none;
   letter-spacing:-0.01em;
 }
@@ -69,8 +69,8 @@ a:focus-visible, button:focus-visible{outline:2px solid var(--teal); outline-off
   border-bottom:1px solid transparent;
   transition:color .2s ease, border-color .2s ease;
 }
-.site-nav .links a:hover{color:var(--teal);}
-.site-nav .links a.active{color:var(--teal); border-color:var(--mustard);}
+.site-nav .links a:hover{color:var(--trust-blue);}
+.site-nav .links a.active{color:var(--trust-blue); border-color:var(--coral);}
 @media (max-width:560px){
   .site-nav{flex-wrap:wrap; gap:10px 20px; padding:18px 24px;}
   .site-nav .brand{font-size:16px;}
@@ -88,7 +88,7 @@ section{padding:100px 0;}
 }
 .page-head .rule{
   width:64px; height:2px;
-  background:var(--mustard);
+  background:var(--trust-blue);
   margin-top:22px;
 }
 .section-head{
@@ -104,7 +104,7 @@ section{padding:100px 0;}
   font-size:13px;
   letter-spacing:0.12em;
   text-transform:uppercase;
-  color:var(--mustard);
+  color:var(--trust-blue);
 }
 .section-head h2{
   font-family:'Fraunces', serif;
@@ -154,7 +154,7 @@ section{padding:100px 0;}
 }
 .home-intro p a{
   font-style:italic;
-  border-bottom:1px solid var(--mustard);
+  border-bottom:1px solid var(--trust-blue);
   text-decoration:none;
 }
 @media (max-width:760px){
@@ -181,7 +181,7 @@ section{padding:100px 0;}
   font-family:'Space Mono', monospace;
   transition:background .2s ease, transform .2s ease;
 }
-.contact-icon:hover{background:var(--teal); transform:translateY(-2px);}
+.contact-icon:hover{background:var(--trust-blue); transform:translateY(-2px);}
 
 /* ---------- Logo / badge strips ---------- */
 .badge-section{
@@ -233,7 +233,7 @@ section{padding:100px 0;}
   transition:border-color .25s ease, transform .25s ease, box-shadow .25s ease;
 }
 .logo-card:hover{
-  border-color:var(--mustard);
+  border-color:var(--trust-blue);
   transform:translateY(-3px);
   box-shadow:0 8px 22px rgba(29,26,22,0.08);
 }
@@ -317,10 +317,10 @@ section{padding:100px 0;}
   font-size:28px;
   color:var(--ink);
   text-decoration:none;
-  border-bottom:2px solid var(--mustard);
+  border-bottom:2px solid var(--coral);
   padding-bottom:6px;
 }
-.resume-link:hover{color:var(--teal);}
+.resume-link:hover{color:var(--trust-blue);}
 
 /* ---------- Experience timeline ---------- */
 .experience{border-bottom:1px solid var(--rule);}
@@ -347,7 +347,7 @@ section{padding:100px 0;}
 .exp-co{
   font-family:'Inter', sans-serif;
   font-size:14px;
-  color:var(--teal);
+  color:var(--trust-blue);
   font-weight:600;
   margin-bottom:12px;
 }
@@ -370,7 +370,7 @@ section{padding:100px 0;}
   font-size:12px;
   letter-spacing:0.12em;
   text-transform:uppercase;
-  color:var(--mustard);
+  color:var(--trust-blue);
   margin-bottom:14px;
   display:block;
 }
@@ -388,7 +388,7 @@ section{padding:100px 0;}
   margin-bottom:24px;
 }
 .story-simple p a{
-  color:var(--teal);
+  color:var(--trust-blue);
   text-decoration:underline;
   text-decoration-color:var(--rule);
   text-underline-offset:3px;
@@ -416,11 +416,11 @@ section{padding:100px 0;}
   cursor:pointer;
 }
 .asset-link:hover{
-  border-color:var(--teal);
-  color:var(--teal);
+  border-color:var(--trust-blue);
+  color:var(--trust-blue);
   transform:translateY(-2px);
 }
-.asset-link .arrow{color:var(--mustard); font-size:14px;}
+.asset-link .arrow{color:var(--trust-blue); font-size:14px;}
 
 /* ---------- Interests: books ---------- */
 .book-list{
@@ -495,10 +495,10 @@ section{padding:100px 0;}
   font-size:14px;
   color:var(--paper);
   text-decoration:none;
-  border-bottom:1px solid var(--mustard);
+  border-bottom:1px solid var(--coral);
   padding-bottom:6px;
 }
-.closing-link:hover{color:var(--mustard);}
+.closing-link:hover{color:var(--coral);}
 footer.site-footer{
   font-family:'Space Mono', monospace;
   font-size:11px;
